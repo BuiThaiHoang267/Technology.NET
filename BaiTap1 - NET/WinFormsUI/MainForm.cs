@@ -1,4 +1,5 @@
-﻿using BaiTap1___NET.DataAccessLayer.DataClass;
+﻿using BaiTap1___NET.DataAccessLayer;
+using BaiTap1___NET.DataAccessLayer.DataClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,8 @@ namespace BaiTap1___NET
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            AnimalDAL animal = new AnimalDAL();
+            animal.GetAllAnimals();
         }
     }
 }
