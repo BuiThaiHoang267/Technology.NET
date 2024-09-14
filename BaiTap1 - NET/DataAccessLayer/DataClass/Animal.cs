@@ -27,8 +27,8 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     }
     public class Cow: Animal, IMilkable, IGiveBirth, ISoundable
     {
-        private int maxProduceMilk = 20;
-        private int maxGiveBirth = 1;
+        private int maxProduceMilk = 21;
+        private int maxGiveBirth = 2;
         public override float ProduceMilk()
         {
             Random random = new Random();
@@ -46,8 +46,8 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     }
     public class Sheep : Animal, IMilkable, IGiveBirth, ISoundable
     {
-        private int maxProduceMilk = 15;
-        private int maxGiveBirth = 2;
+        private int maxProduceMilk = 6;
+        private int maxGiveBirth = 3;
         public override float ProduceMilk()
         {
             Random random = new Random();
@@ -65,8 +65,8 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     }
     public class Goat : Animal, IMilkable, IGiveBirth, ISoundable
     {
-        private int maxProduceMilk = 10;
-        private int maxGiveBirth = 3;
+        private int maxProduceMilk = 11;
+        private int maxGiveBirth = 4;
         public override float ProduceMilk()
         {
             Random random = new Random();

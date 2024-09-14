@@ -24,5 +24,6 @@ namespace BaiTap1___NET
             AnimalDAL animal = new AnimalDAL();
             animal.GetAllAnimals();
         }
+
     }
 }
