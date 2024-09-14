@@ -6,5 +6,18 @@ using System.Threading.Tasks;
 
 namespace BaiTap1___NET.DataAccessLayer.DataClass
 {
-    
+    public interface IMilkable
+    {
+        float ProduceMilk();
+    }
+
+    public interface ISoundable
+    {
+        void MakeSound();
+    }
+
+    public interface IGiveBirth
+    {
+        float GiveBirth();
+    }
 }
