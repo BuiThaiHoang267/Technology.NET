@@ -26,29 +26,31 @@ namespace BaiTap1___NET.DataAccessLayer
 
                 while (reader.Read())
                 {
-                    Animal animal = new Animal();
+                    Animal animal;
+                    switch (reader["ANIMALTYPE"].ToString())
+                    {
+                        case "Cow":
+                            animal = new Cow();
+                            break;
+                        case "Sheep":
+                            animal = new Sheep();
+                            break;
+                        case "Goat":
+                            animal = new Goat();
+                            break;
+                        default:
+                            animal = new Animal();
+                            break;
+                    }
                     animal.AnimalID = (int)reader["ANIMALID"];
                     animal.AnimalType = reader["ANIMALTYPE"].ToString();
-                    animal.AnimalAmount = (int)reader["ANIMALAMOUNT"];
                     animal.Sound = reader["SOUND"].ToString();
                     animals.Add(animal);
+                    Debug.WriteLine(animal.AnimalType);
                 }
             }
-
             return animals;
         }
 
-        public void InsertMilkProduction(int animalId, float milkAmount)
-        {
-            using (SqlConnection connection = new SqlConnection())
-            {
-                string query = "INSERT INTO MILKPRODUCTION (ANIMALID, MILKAMOUNT) VALUES (@ANIMALID, @MILKAMOUNT)";
-                SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@ANIMALID", animalId);
-                cmd.Parameters.AddWithValue("@MILKAMOUNT", milkAmount);
-                connection.Open();
-                cmd.ExecuteNonQuery();
-            }
-        }
     }
 }

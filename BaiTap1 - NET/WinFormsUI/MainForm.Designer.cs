@@ -36,12 +36,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.btnThongKe = new System.Windows.Forms.Button();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +93,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(118, 30);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -102,6 +103,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(118, 30);
             this.textBox2.TabIndex = 5;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -111,6 +113,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(118, 30);
             this.textBox3.TabIndex = 6;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // dataGrid
             // 
@@ -122,17 +125,30 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGrid.Enabled = false;
             this.dataGrid.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.dataGrid.Location = new System.Drawing.Point(353, 89);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersWidth = 51;
             this.dataGrid.RowTemplate.Height = 24;
-            this.dataGrid.Size = new System.Drawing.Size(937, 110);
+            this.dataGrid.Size = new System.Drawing.Size(937, 118);
             this.dataGrid.TabIndex = 7;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThongKe.Location = new System.Drawing.Point(353, 33);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(134, 36);
+            this.btnThongKe.TabIndex = 8;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "AnimalType";
             this.Column5.HeaderText = "Loại";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
@@ -140,7 +156,8 @@
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Số lượng ban đầu";
+            this.Column1.DataPropertyName = "CurrentAmount";
+            this.Column1.HeaderText = "Số lượng hiện tại";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -149,6 +166,7 @@
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "TotalGiveBirth";
             this.Column2.HeaderText = "Số lượng sinh";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
@@ -157,6 +175,7 @@
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "TotalMilk";
             this.Column3.HeaderText = "Sữa";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
@@ -165,29 +184,18 @@
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "TotalAmount";
             this.Column4.HeaderText = "Tổng số lượng";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.Width = 125;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(353, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 36);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Thống kê";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1313, 748);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -215,12 +223,12 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Button button1;
     }
 }
 

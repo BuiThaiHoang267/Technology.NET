@@ -11,17 +11,15 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     {
         public int AnimalID;
         public string AnimalType;
-        public int AnimalAmount;
         public string Sound;
 
         public Animal()
         {
             AnimalID = 0;
-            AnimalAmount = 0;
             AnimalType = Sound = string.Empty;
         }
 
-        public virtual float ProduceMilk() { return 0; }
+        public virtual int ProduceMilk() { return 0; }
         public virtual int GiveBirth() { return 0; }
         public virtual void MakeSound() { }
     }
@@ -29,10 +27,10 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     {
         private int maxProduceMilk = 21;
         private int maxGiveBirth = 2;
-        public override float ProduceMilk()
+        public override int ProduceMilk()
         {
             Random random = new Random();
-            return (float)random.Next(0,maxProduceMilk);
+            return random.Next(0,maxProduceMilk);
         }
         public override int GiveBirth()
         {
@@ -48,10 +46,10 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     {
         private int maxProduceMilk = 6;
         private int maxGiveBirth = 3;
-        public override float ProduceMilk()
+        public override int ProduceMilk()
         {
             Random random = new Random();
-            return (float)random.Next(0, maxProduceMilk);
+            return random.Next(0, maxProduceMilk);
         }
         public override int GiveBirth()
         {
@@ -67,10 +65,10 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     {
         private int maxProduceMilk = 11;
         private int maxGiveBirth = 4;
-        public override float ProduceMilk()
+        public override int ProduceMilk()
         {
             Random random = new Random();
-            return (float)random.Next(0, maxProduceMilk);
+            return random.Next(0, maxProduceMilk);
         }
         public override int GiveBirth()
         {

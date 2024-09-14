@@ -46,9 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogicLayer\AnimalLogic.cs" />
     <Compile Include="DataAccessLayer\AnimalDAL.cs" />
-    <Compile Include="DataAccessLayer\DataClass\Animal.cs" />
-    <Compile Include="DataAccessLayer\DataClass\InterfaceAnimal.cs" />
+    <Compile Include="DataAccessLayer\DataClass\DataThongKe.cs" />
+    <Compile Include="DataAccessLayer\Object\Animal.cs" />
+    <Compile Include="DataAccessLayer\Object\InterfaceAnimal.cs" />
     <Compile Include="WinFormsUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,8 +84,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLogicLayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

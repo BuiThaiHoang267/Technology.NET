@@ -8,7 +8,7 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
 {
     public interface IMilkable
     {
-        float ProduceMilk();
+        int ProduceMilk();
     }
 
     public interface ISoundable
