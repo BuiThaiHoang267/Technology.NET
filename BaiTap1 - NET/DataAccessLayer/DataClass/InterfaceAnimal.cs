@@ -18,6 +18,6 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
 
     public interface IGiveBirth
     {
-        float GiveBirth();
+        int GiveBirth();
     }
 }

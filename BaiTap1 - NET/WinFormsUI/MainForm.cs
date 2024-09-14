@@ -20,7 +20,7 @@ namespace BaiTap1___NET
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Animal animal = new Animal();
+            
         }
     }
 }
