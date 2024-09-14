@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BaiTap1___NET.DataAccessLayer.DataClass
 {
-    public abstract class Animal
+    public class Animal
     {
         public int AnimalID;
         public string AnimalType;
@@ -20,22 +20,26 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
             AnimalAmount = 0;
             AnimalType = Sound = string.Empty;
         }
+
+        public virtual float ProduceMilk() { return 0; }
+        public virtual int GiveBirth() { return 0; }
+        public virtual void MakeSound() { }
     }
     public class Cow: Animal, IMilkable, IGiveBirth, ISoundable
     {
         private int maxProduceMilk = 20;
         private int maxGiveBirth = 1;
-        public float ProduceMilk()
+        public override float ProduceMilk()
         {
             Random random = new Random();
             return (float)random.Next(0,maxProduceMilk);
         }
-        public int GiveBirth()
+        public override int GiveBirth()
         {
             Random random = new Random();
             return random.Next(0,maxGiveBirth);
         }
-        public void MakeSound()
+        public override void MakeSound()
         {
             Debug.WriteLine(Sound);
         }
@@ -44,17 +48,17 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     {
         private int maxProduceMilk = 15;
         private int maxGiveBirth = 2;
-        public float ProduceMilk()
+        public override float ProduceMilk()
         {
             Random random = new Random();
             return (float)random.Next(0, maxProduceMilk);
         }
-        public int GiveBirth()
+        public override int GiveBirth()
         {
             Random random = new Random();
             return random.Next(0, maxGiveBirth);
         }
-        public void MakeSound()
+        public override void MakeSound()
         {
             Debug.WriteLine(Sound);
         }
@@ -63,17 +67,17 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     {
         private int maxProduceMilk = 10;
         private int maxGiveBirth = 3;
-        public float ProduceMilk()
+        public override float ProduceMilk()
         {
             Random random = new Random();
             return (float)random.Next(0, maxProduceMilk);
         }
-        public int GiveBirth()
+        public override int GiveBirth()
         {
             Random random = new Random();
             return random.Next(0, maxGiveBirth);
         }
-        public void MakeSound()
+        public override void MakeSound()
         {
             Debug.WriteLine(Sound);
         }
