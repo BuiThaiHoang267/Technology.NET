@@ -27,14 +27,13 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     {
         private int maxProduceMilk = 21;
         private int maxGiveBirth = 2;
+        private Random random = new Random();
         public override int ProduceMilk()
         {
-            Random random = new Random();
             return random.Next(0,maxProduceMilk);
         }
         public override int GiveBirth()
         {
-            Random random = new Random();
             return random.Next(0,maxGiveBirth);
         }
         public override void MakeSound()
@@ -46,14 +45,14 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     {
         private int maxProduceMilk = 6;
         private int maxGiveBirth = 3;
+        private Random random = new Random();
+
         public override int ProduceMilk()
         {
-            Random random = new Random();
             return random.Next(0, maxProduceMilk);
         }
         public override int GiveBirth()
         {
-            Random random = new Random();
             return random.Next(0, maxGiveBirth);
         }
         public override void MakeSound()
@@ -65,14 +64,14 @@ namespace BaiTap1___NET.DataAccessLayer.DataClass
     {
         private int maxProduceMilk = 11;
         private int maxGiveBirth = 4;
+        private Random random = new Random();
+
         public override int ProduceMilk()
         {
-            Random random = new Random();
             return random.Next(0, maxProduceMilk);
         }
         public override int GiveBirth()
         {
-            Random random = new Random();
             return random.Next(0, maxGiveBirth);
         }
         public override void MakeSound()

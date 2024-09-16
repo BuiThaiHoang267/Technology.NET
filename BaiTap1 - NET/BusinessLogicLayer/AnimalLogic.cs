@@ -30,7 +30,6 @@ namespace BaiTap1___NET.BusinessLogicLayer
                 switch(animal.AnimalType.ToLower())
                 {
                     case "cow":
-                        Debug.WriteLine("cow ne ba");
                         dt.CurrentAmount = cowAmount;
                         dt.TotalMilk = ProduceMilk(animal, cowAmount);
                         dt.TotalGiveBirth = GiveBirth(animal, cowAmount);
@@ -60,6 +59,7 @@ namespace BaiTap1___NET.BusinessLogicLayer
             int totalMilk = 0;
             for (int i = 0; i < count;i++)
             {
+                
                 totalMilk += animal.ProduceMilk();
             }
             return totalMilk;

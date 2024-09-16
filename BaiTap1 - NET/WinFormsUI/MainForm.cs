@@ -38,10 +38,10 @@ namespace BaiTap1___NET
         {
             List<DataThongKe> data;
             ValidateData();
-            if (!canStatistical)
-                data = animalLogic.Statistical(0, 0, 0);
-            else
+            if (canStatistical)
                 data = animalLogic.Statistical(countCow, countSheep, countGoat);
+            else
+                return;
 
             dataGrid.DataSource = data; 
         }
