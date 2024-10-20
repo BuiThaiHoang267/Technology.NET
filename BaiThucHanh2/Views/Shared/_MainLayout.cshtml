@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BaiThucHanh2</title>
+    <link rel="stylesheet" href="~/css/MainLayout.css" asp-append-version="true" />
+</head>
+<body class="container">
+    <div class="header">
+        <div class="header-padding-top"></div>
+        <div class="header-wrapper">
+            <img src="https://jollibee.com.vn/static/version1729177984/frontend/Jollibee/default/vi_VN/images/bg-header.png" width="100" height="34" />
+            <div class="header-wrapper-container">
+                <a>ĐĂNG NHẬP/ ĐĂNG KÝ</a>
+            </div>
+        </div>
+        <div class="header-content">
+            <img class="header-logo" src="https://jollibee.com.vn/static/version1729177984/frontend/Jollibee/default/vi_VN/images/logo.png" alt="logo" />
+            <div class="space-x"></div>
+            <button class="header-button" onclick="location.href='@Url.Action("Index", "Home")'">TRANG CHỦ</button>
+            <button class="header-button" onclick="location.href='@Url.Action("Index", "Home")'">THỰC ĐƠN</button>
+            <button class="header-button" onclick="location.href='@Url.Action("Privacy", "Home")'">KHUYẾN MÃI</button>
+            <button class="header-button" onclick="location.href='@Url.Action("Contact", "Home")'">DỊCH VỤ</button>
+            <button class="header-button" onclick="location.href='@Url.Action("Contact", "Home")'">TIN TỨC</button>
+            <button class="header-button" onclick="location.href='@Url.Action("Contact", "Home")'">CỬA HÀNG</button>
+            <button class="header-button" onclick="location.href='@Url.Action("Contact", "Home")'">LIÊN HỆ</button>
+            <button class="header-button" onclick="location.href='@Url.Action("Contact", "Home")'">TUYỂN DỤNG</button>
+
+            <div class="hotline-container">
+                <button class="button-pickup">PICK UP</button>
+                <img src="https://jollibee.com.vn/media/wysiwyg/delivery-lg-rs.png" height="34" width="140" />
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <img class="footer-logo" src="https://jollibee.com.vn/static/version1729177984/frontend/Jollibee/default/vi_VN/images/logo.png" alt="logo" />
+               
+            <div class="content-column1">
+                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
+                <span class="footer-text">Địa chỉ: Tầng 26, Tòa nhà CII Tower, số 152 Điện Biên Phủ, Phường 25, Quận Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam</span>
+                <span class="footer-text">Điện thoại: (028) 39309168</span>
+                <span class="footer-text">Tổng đài: 1900-1533</span>
+                <span class="footer-text">Mã số thuế: 0303883266</span>
+                <span class="footer-text">Ngày cấp: 15/07/2008 – Nơi cấp: Cục Thuế Hồ Chí Minh</span>
+                <span class="footer-text">Hộp thư góp ý: jbvnfeedback@jollibee.com.vn</span>
+
+            </div>
+            <div class="content-column2">
+                <img src="https://jollibee.com.vn/media/wysiwyg/delivery-lg-rs.png"/>
+                <span class="footer-text">Liên hệ</span>
+                <span class="footer-text">Chính sách và quy định chung</span>
+                <span class="footer-text">Chính sách thanh toán khi đặt hàng</span>
+                <span class="footer-text">Chính sách hoạt động</span>
+                <span class="footer-text">Chính sách bảo mật thông tin</span>
+                <span class="footer-text">Thông tin vận chuyển và giao nhận</span>
+                <span class="footer-text">Thông tin đăng ký giao dịch chung</span>
+                <span class="footer-text">Hướng dẫn đặt phần ăn</span>
+
+            </div>
+            <div class="content-column3">
+                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
+                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
+                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
+                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
+                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
+                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
+                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>2022 Jollibee Viet Nam</span>
+        </div>
+    </div>
+</body>
+</html>
