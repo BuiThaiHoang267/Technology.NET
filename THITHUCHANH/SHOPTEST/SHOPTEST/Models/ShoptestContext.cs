@@ -23,6 +23,8 @@ public partial class ShoptestContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
+    public virtual DbSet<User> Users { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Data Source=MSI;Initial Catalog=SHOPTEST;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;");
 
@@ -30,11 +32,11 @@ public partial class ShoptestContext : DbContext
     {
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Category__3214EC074FF1371F");
+            entity.HasKey(e => e.Id).HasName("PK__Category__3214EC0762CCAD14");
 
             entity.ToTable("Category");
 
-            entity.HasIndex(e => e.Name, "UQ__Category__737584F6851E2AE1").IsUnique();
+            entity.HasIndex(e => e.Name, "UQ__Category__737584F6C377206F").IsUnique();
 
             entity.Property(e => e.Img).IsUnicode(false);
             entity.Property(e => e.Name).HasMaxLength(100);
@@ -42,7 +44,7 @@ public partial class ShoptestContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Order__3214EC07470A2D17");
+            entity.HasKey(e => e.Id).HasName("PK__Order__3214EC07D93A1F77");
 
             entity.ToTable("Order");
 
@@ -52,7 +54,7 @@ public partial class ShoptestContext : DbContext
 
         modelBuilder.Entity<OrderDetail>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__OrderDet__3214EC078EED5915");
+            entity.HasKey(e => e.Id).HasName("PK__OrderDet__3214EC070CB16EB1");
 
             entity.ToTable("OrderDetail");
 
@@ -69,7 +71,7 @@ public partial class ShoptestContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Product__3214EC078ABF5D1A");
+            entity.HasKey(e => e.Id).HasName("PK__Product__3214EC07DC7D8D8B");
 
             entity.ToTable("Product");
 
@@ -81,6 +83,27 @@ public partial class ShoptestContext : DbContext
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
                 .HasConstraintName("FK__Product__Categor__3A81B327");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07E1727B0C");
+
+            entity.HasIndex(e => e.Username, "UQ__Users__536C85E4F7B834D7").IsUnique();
+
+            entity.Property(e => e.Email)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Password)
+                .HasMaxLength(30)
+                .IsUnicode(false);
+            entity.Property(e => e.Sdt)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("SDT");
+            entity.Property(e => e.Username)
+                .HasMaxLength(255)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);

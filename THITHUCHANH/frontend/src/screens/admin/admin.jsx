@@ -28,8 +28,8 @@ function AdminScreen() {
             </div>
             <div className={"admin-content"}>
                 <Routes>
-                    <Route path={"/dashboard"} element={<DashBoardScreen/>} />
-                    <Route path={"/category"} element={<h1>Hello</h1>} />
+                    <Route path={"/dashboard"} element={<ProductScreen/>} />
+                    <Route path={"/category"} element={<DashBoardScreen></DashBoardScreen>} />
                     <Route path={"/product"} element={<ProductScreen/>} />
                     <Route path={"/order"} element={<DashBoardScreen/>} />
                 </Routes>
