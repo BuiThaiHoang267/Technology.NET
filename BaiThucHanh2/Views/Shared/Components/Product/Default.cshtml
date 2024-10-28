@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Product>
+
+<div>
+	<div class="product-container">
+		@foreach(var item in Model)
+		{
+			<div class="product-item">
+				<img class="product-item-img" src=@item.Image />
+				<span class="product-item-name">@item.Name</span>
+				<span class="product-item-price">@item.Price</span>
+				<button class="product-button">ĐẶT NGAY</button>
+			</div>
+		}
+	</div>
+</div>

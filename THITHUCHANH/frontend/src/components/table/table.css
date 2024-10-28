@@ -1,0 +1,61 @@
+/* TableComponent.css */
+.table {
+    width: 100%;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.table-cell {
+    padding: 8px;
+    text-align: start;
+    border-top: 1px solid #ddd;
+}
+.header-row {
+    max-height: 70px;
+}
+.actions-cell {
+    width: 40px;
+}
+
+.edit-btn, .delete-btn {
+    color: inherit;
+    cursor: pointer;
+    background-color: var(--color-pink);
+    border: none;
+    font-size: 14px;
+    padding: 4px;
+    height: 40px;
+    width: 60px;
+}
+
+.edit-btn {
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+}
+.edit-btn-logo{
+    height: 20px;
+    width: 20px;
+}
+.delete-btn {
+    height: 40px;
+    width: 40px;
+    background-color: red;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn-create-product {
+    margin: 10px 0;
+    background-color: var(--color-yellow);
+}
+
+

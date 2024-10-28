@@ -1,0 +1,36 @@
+/* Footer.css */
+.footer {
+    background-color: var(--color-red);
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-company-info,
+.footer-quick-links,
+.footer-social,
+.footer-app,
+.footer-certification,
+.footer-copyright {
+    margin: 10px 0;
+}
+
+.footer-quick-links ul,
+.footer-social ul,
+.footer-app ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-quick-links li,
+.footer-social li,
+.footer-app li {
+    margin: 5px 0;
+}

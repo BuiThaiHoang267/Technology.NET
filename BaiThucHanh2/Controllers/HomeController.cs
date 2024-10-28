@@ -1,4 +1,5 @@
 using BaiThucHanh2.Models;
+using BaiThucHanh2.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -16,8 +17,16 @@ namespace BaiThucHanh2.Controllers
 
 		public IActionResult Index()
         {
-            var categories = db.Categories.ToList();
-            return View("Index",categories);
+            ThucDonViewModel thucDonViewModel = new ThucDonViewModel();
+            thucDonViewModel.products = db.Products.Where(p => p.CategoryId == 2).ToList();
+            return View("Index",thucDonViewModel);
+        }
+
+        public IActionResult ProductByCategory(int categoryId)
+        {
+            ThucDonViewModel thucDonViewModel = new ThucDonViewModel();
+            thucDonViewModel.products = db.Products.Where(p => p.CategoryId == categoryId).ToList();
+            return View("Index",thucDonViewModel);
         }
 
 		public IActionResult Privacy()

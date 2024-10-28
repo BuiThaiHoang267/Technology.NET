@@ -1,0 +1,27 @@
+.card-category {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    color: black;
+}
+
+.card-category:hover {
+    color: var(--color-red);
+    cursor: pointer;
+}
+
+.card-category-image {
+    height: 72px;
+    width: 120px;
+}
+
+.card-category-name {
+    font-weight: bold;
+}
+
+.is-active {
+    color: var(--color-red);
+}

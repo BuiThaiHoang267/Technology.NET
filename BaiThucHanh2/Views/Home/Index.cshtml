@@ -1,31 +1,10 @@
 ﻿@{
 	ViewData["Title"] = "Home Page";
-	Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-@model List<Category>
+@model BaiThucHanh2.ViewModel.ThucDonViewModel
 
 <div>
-	<ul>
-		@foreach (var item in Model)
-		{
-			<li>@item.Name</li>
-		}
-		@foreach (var item in Model)
-		{
-			<li>@item.Name</li>
-		}
-		@foreach (var item in Model)
-		{
-			<li>@item.Name</li>
-		}
-		@foreach (var item in Model)
-		{
-			<li>@item.Name</li>
-		}
-		@foreach (var item in Model)
-		{
-			<li>@item.Name</li>
-		}
-	</ul>
+	@await Component.InvokeAsync("Category")
+	@await Component.InvokeAsync("Product", Model.products)
 </div>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BaiThucHanh2</title>
     <link rel="stylesheet" href="~/css/MainLayout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/product-view-component.css" asp-append-version="true" />
 </head>
 <body class="container">
     <div class="header">
@@ -19,14 +20,20 @@
         <div class="header-content">
             <img class="header-logo" src="https://jollibee.com.vn/static/version1729177984/frontend/Jollibee/default/vi_VN/images/logo.png" alt="logo" />
             <div class="space-x"></div>
-            <button class="header-button" onclick="location.href='@Url.Action("Index", "Home")'">TRANG CHỦ</button>
-            <button class="header-button" onclick="location.href='@Url.Action("Index", "Home")'">THỰC ĐƠN</button>
-            <button class="header-button" onclick="location.href='@Url.Action("Privacy", "Home")'">KHUYẾN MÃI</button>
-            <button class="header-button" onclick="location.href='@Url.Action("Contact", "Home")'">DỊCH VỤ</button>
-            <button class="header-button" onclick="location.href='@Url.Action("Contact", "Home")'">TIN TỨC</button>
-            <button class="header-button" onclick="location.href='@Url.Action("Contact", "Home")'">CỬA HÀNG</button>
-            <button class="header-button" onclick="location.href='@Url.Action("Contact", "Home")'">LIÊN HỆ</button>
-            <button class="header-button" onclick="location.href='@Url.Action("Contact", "Home")'">TUYỂN DỤNG</button>
+            <button class="header-button @(ViewContext.RouteData.Values["action"].ToString() == "Privacy" ? "button-active" : "")"
+                    onclick="location.href='@Url.Action("Privacy", "Home")'">
+                TRANG CHỦ
+            </button>
+            <button class="header-button @(ViewContext.RouteData.Values["action"].ToString() == "Index" ? "button-active" : "")"
+                    onclick="location.href='@Url.Action("Index", "Home")'">
+                THỰC ĐƠN
+            </button>
+            <button class="header-button" data-url="@Url.Action("Privacy", "Home")">KHUYẾN MÃI</button>
+            <button class="header-button" data-url="@Url.Action("Contact", "Home")">DỊCH VỤ</button>
+            <button class="header-button" data-url="@Url.Action("Contact", "Home")">TIN TỨC</button>
+            <button class="header-button" data-url="@Url.Action("Contact", "Home")">CỬA HÀNG</button>
+            <button class="header-button" data-url="@Url.Action("Contact", "Home")">LIÊN HỆ</button>
+            <button class="header-button" data-url="@Url.Action("Contact", "Home")">TUYỂN DỤNG</button>
 
             <div class="hotline-container">
                 <button class="button-pickup">PICK UP</button>
@@ -64,13 +71,24 @@
 
             </div>
             <div class="content-column3">
-                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
-                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
-                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
-                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
-                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
-                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
-                <span class="footer-text">CÔNG TY TNHH JOLLIBEE VIET NAM</span>
+                <span class="footer-text text-large">HÃY KẾT NỐI VỚI CHÚNG TÔI</span>
+                <div class="footer-item-container">
+                    <img src="https://jollibee.com.vn/media/wysiwyg/icon-fb.png" height="34" width="34"/>
+                    <div class="space-x-10"></div>
+                    <span class="footer-text">Facebook</span>
+                </div>
+                <div class="footer-item-container">
+                    <img src="https://jollibee.com.vn/media/wysiwyg/icon-mail.png" height="34" width="34" />
+                    <div class="space-x-10"></div>
+                    <span class="footer-text">Gmail</span>
+                </div>
+                <img src="https://jollibee.com.vn/media/wysiwyg/bocongthuong.png" height="76" width="200" />
+                <span class="footer-text text-large">TẢI ỨNG DỤNG ĐẶT HÀNG VỚI NHIỀU ƯU ĐÃI HƠN</span>
+                <div class="footer-item-container">
+                    <img src="https://jollibee.com.vn/media/jollibee/logo_playstore.png" height="42" width="140" />
+                    <div class="space-x-10"></div>
+                    <img src="https://jollibee.com.vn/media/jollibee/logo_appstore.png" height="42" width="140" />
+                </div>
             </div>
         </div>
         <div class="copyright">

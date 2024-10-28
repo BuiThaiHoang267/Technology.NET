@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Category>
+
+<link rel="stylesheet" href="~/css/category-view-component.css"/>
+<div class="category">
+	<div class="category-container">
+		@foreach(var item in Model)
+		{
+			<a class="category-item" asp-controller="Home" asp-action="ProductByCategory" asp-route-categoryId=@item.Id>
+				<img src=@item.Image class="category-item-img"/>
+				<span class="category-item-name">@item.Name</span>
+			</a>
+		}
+	</div>
+</div>
