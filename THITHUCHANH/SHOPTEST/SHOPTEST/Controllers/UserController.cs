@@ -13,14 +13,26 @@ namespace SHOPTEST.Controllers
 		public UserController(ShoptestContext context) {
 			_context = context;
 		}
-		// Check User
-		[HttpGet("checkuser")]
-		public async Task<ActionResult<User>> CheckUser([FromBody] User user)
+
+		[HttpPost("login")]
+		public async Task<IActionResult> Login([FromBody] User user)
 		{
-			var userCheck = await _context.Users.FirstOrDefaultAsync(u => u.Username == user.Username && u.Password == user.Password);
-			if (userCheck == null)
-				return Unauthorized();
-			return Ok(userCheck);
+			// Tìm người dùng dựa trên tên đăng nhập
+			var userCheck = await _context.Users.FirstOrDefaultAsync(u => u.Username == user.Username);
+
+			// Kiểm tra xem người dùng có tồn tại và mật khẩu có khớp không
+			if (userCheck == null || user.Password != userCheck.Password) // Kiểm tra mật khẩu đã mã hóa
+			{
+				return Unauthorized(new { message = "Invalid username or password" });
+			}
+
+			// Trả về thông báo xác thực thành công
+			return Ok(new 
+			{ 
+				message = "User authenticated successfully" ,
+				role = userCheck.Role,
+			});
 		}
+
 	}
 }

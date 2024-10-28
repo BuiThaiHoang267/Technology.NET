@@ -13,5 +13,5 @@ public partial class User
 
     public string? Email { get; set; }
 
-    public string? Sdt { get; set; }
+    public string? Role { get; set; }
 }

@@ -32,11 +32,11 @@ public partial class ShoptestContext : DbContext
     {
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Category__3214EC0762CCAD14");
+            entity.HasKey(e => e.Id).HasName("PK__Category__3214EC07B2BBBBC8");
 
             entity.ToTable("Category");
 
-            entity.HasIndex(e => e.Name, "UQ__Category__737584F6C377206F").IsUnique();
+            entity.HasIndex(e => e.Name, "UQ__Category__737584F604B4DB5F").IsUnique();
 
             entity.Property(e => e.Img).IsUnicode(false);
             entity.Property(e => e.Name).HasMaxLength(100);
@@ -44,7 +44,7 @@ public partial class ShoptestContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Order__3214EC07D93A1F77");
+            entity.HasKey(e => e.Id).HasName("PK__Order__3214EC078DFFFEDA");
 
             entity.ToTable("Order");
 
@@ -54,7 +54,7 @@ public partial class ShoptestContext : DbContext
 
         modelBuilder.Entity<OrderDetail>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__OrderDet__3214EC070CB16EB1");
+            entity.HasKey(e => e.Id).HasName("PK__OrderDet__3214EC07BD64E54C");
 
             entity.ToTable("OrderDetail");
 
@@ -71,7 +71,7 @@ public partial class ShoptestContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Product__3214EC07DC7D8D8B");
+            entity.HasKey(e => e.Id).HasName("PK__Product__3214EC0786ED2702");
 
             entity.ToTable("Product");
 
@@ -87,9 +87,9 @@ public partial class ShoptestContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07E1727B0C");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07A8A093C5");
 
-            entity.HasIndex(e => e.Username, "UQ__Users__536C85E4F7B834D7").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Users__536C85E478B9681F").IsUnique();
 
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
@@ -97,10 +97,9 @@ public partial class ShoptestContext : DbContext
             entity.Property(e => e.Password)
                 .HasMaxLength(30)
                 .IsUnicode(false);
-            entity.Property(e => e.Sdt)
+            entity.Property(e => e.Role)
                 .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("SDT");
+                .IsUnicode(false);
             entity.Property(e => e.Username)
                 .HasMaxLength(255)
                 .IsUnicode(false);
